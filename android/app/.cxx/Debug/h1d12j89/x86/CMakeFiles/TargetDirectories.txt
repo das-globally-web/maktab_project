@@ -1,0 +1,2 @@
+C:/Users/Globally-04/maktab_project/android/app/.cxx/Debug/h1d12j89/x86/CMakeFiles/edit_cache.dir
+C:/Users/Globally-04/maktab_project/android/app/.cxx/Debug/h1d12j89/x86/CMakeFiles/rebuild_cache.dir

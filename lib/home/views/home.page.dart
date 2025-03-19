@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int tabBottom = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -194,9 +195,35 @@ class _HomePageState extends State<HomePage> {
                   height: 106.w,
                   width: 173.w,
                   decoration: BoxDecoration(
-                      color: Colors.transparent,
+                      color: primeryColor,
                       borderRadius: BorderRadius.circular(7.09.r)),
-                )
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0.w),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.supervisor_account_outlined,
+                          color: Colors.white,
+                          size: 17.w,
+                        ),
+                        Text("STAFF",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: 0.02.w)),
+                        Text("12",
+                            style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontSize: 31.02.sp,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: 0.02.w))
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -819,6 +846,54 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             )
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Color.fromARGB(38, 38, 38, 38),
+            ),
+          ),
+        ),
+        child: BottomNavigationBar(
+          onTap: (value) {
+            setState(() {
+              tabBottom = value;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: primeryColor,
+          unselectedItemColor: Color(0xFF808080),
+          selectedLabelStyle: GoogleFonts.inter(
+            fontWeight: FontWeight.w400,
+            fontSize: 9.75.sp,
+            color: Color(0xFF375A3A),
+          ),
+          unselectedLabelStyle: GoogleFonts.inter(
+            fontWeight: FontWeight.w400,
+            fontSize: 9.75.sp,
+            color: Color(0xFF808080),
+          ),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_filled),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.menu_book_outlined),
+              label: "My Course",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.messenger_outline),
+              label: "Message",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline),
+              label: "Profile",
+            ),
           ],
         ),
       ),
